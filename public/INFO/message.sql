@@ -40,10 +40,10 @@ CREATE TABLE IF NOT EXISTS `message` (
 --
 
 INSERT INTO `message` (`id`, `id_author`, `pseudo`, `date`, `content`) VALUES
-(1, 1, 'Bleu', '2016-06-10 09:26:17', 'IL fait beau aujourd''hui !'),
-(2, 2, 'Rouge', '2016-06-10 09:26:17', 'C''est génial le chat :)'),
+(1, 1, 'Bleu', '2016-06-10 09:26:17', 'IL fait beau aujourd hui !'),
+(2, 2, 'Rouge', '2016-06-10 09:26:17', 'C est genial le chat :)'),
 (3, 1, 'Bleu', '2016-06-10 09:26:17', 'Tu fais quoi ce weekend ?'),
-(4, 2, 'Rouge', '2016-06-10 09:26:17', 'Ben euh j''sais pas...'),
+(4, 2, 'Rouge', '2016-06-10 09:26:17', 'Ben euh j sais pas...'),
 (5, 1, 'Bleu', '2016-06-10 09:26:17', 'Moi non plus :))');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

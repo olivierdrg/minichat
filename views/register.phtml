@@ -1,0 +1,41 @@
+<form method="POST" class="register-form" enctype="multipart/form-data">
+    <div class ="col-md-6 col-sm-12 col-xs-12">
+        <div class="row">
+            <div class="col-md-12">
+                <label class="sr-only col-md-12" for="login">Login</label>
+            </div>
+            <div class="col-md-12">            
+                <input class="col-xs-12" type="text" id="login" name="login" placeholder="Login*" value="<?= htmlentities( $login ) ?>">
+            </div>
+            <div class="col-md-12"> 
+                <label class="sr-only col-md-12" for="pseudo">Pseudo</label>
+            </div>
+            <div class="col-md-12">            
+                <input class="col-xs-12" type="text" id="pseudo" name="pseudo" placeholder="Pseudo*" value="<?= htmlentities( $pseudo ) ?>">
+            </div>
+        </div>
+    </div>
+
+    <div class ="col-md-6 col-sm-12 col-xs-12">
+        <div class="row">
+            <div class="col-md-12">
+                <label class="sr-only col-md-12" for="password">Mot de passe</label>
+            </div>
+            <div class="col-md-12">                  
+                <input class="col-xs-12" type="password" id="password" name="password" placeholder="Mot de passe*" value="<?= htmlentities( $password ) ?>">
+            </div>
+            <div class="col-md-12">
+                <label class="sr-only col-md-12" for="confirme_password">Confirmez le mot de passe</label>
+            </div>
+            <div class="col-md-12">                  
+                <input class="col-xs-12" type="password" id="confirme_password" name="confirme_password" placeholder="Confirmez votre mot de passe*" value="<?= htmlentities( $confirme_password ) ?>">
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="form-group col-md-12 col-sm-12 col-xs-12 text-center">
+            <button type="submit" class="bouton button btn btn-success" name="action" value="register">M'enregistrer</button>
+        </div>
+    </div>
+</form>

@@ -17,18 +17,23 @@
     define( 'IMAGE_PATH', LIB . 'images/' );
     define( 'CSS_PATH', LIB . 'css/' );
     define( 'JS_PATH', LIB . 'js/' );
-    define( 'STAR', '' ); // fontawesome fa-star 
-    
+   
 
-    $page = 'home';
+    $page = 'login';
     $error = '';
 
     $access = array(
         'chat',
+        'login',
+        'logout',
+        'register',        
     );
 
     $access_traitement = array(      
-        'chat'                     => 'chat',
+        'chat'                      => 'message',
+        'login'                     => 'author',
+        'logout'                    => 'author',
+        'register'                  => 'author',        
     );
 
     if ( isset( $_GET['page'] ) ) {
@@ -41,11 +46,11 @@
         require('apps/traitement_' . $access_traitement[$page] . '.php' );
     }
 
-    if ( isset( $_GET['ajax'] ) ) {
-        $accessAjax = ['panier'];
-        $pageAjax = 'panier';
-        require('apps/'.$pageAjax.'.php');
-    } else
+    // if ( isset( $_GET['ajax'] ) ) {
+    //     $accessAjax = ['panier'];
+    //     $pageAjax = 'panier';
+    //     require('apps/'.$pageAjax.'.php');
+    // } else
         require('apps/skel.php');
 
 ?>

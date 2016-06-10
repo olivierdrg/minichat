@@ -1,0 +1,7 @@
+<div class="message" data-id="156">
+    <span class="dateblock">
+        <span class="date"><?= htmlentities( $message->getDate() ) ?></span>
+    </span>
+    <span class="authorblock"><?= htmlentities( $message->getAuthor()->getPseudo() ) ?></span>
+    <span class="contentblock"><?= htmlentities( $message->getContent() ) ?></span>
+</div>
