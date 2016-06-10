@@ -1,4 +1,2 @@
 # minichat
-Mini chat avec Ajax.
-
-daz
+TP minichat avec Ajax.
