@@ -46,11 +46,11 @@
         require('apps/traitement_' . $access_traitement[$page] . '.php' );
     }
 
-    // if ( isset( $_GET['ajax'] ) ) {
-    //     $accessAjax = ['panier'];
-    //     $pageAjax = 'panier';
-    //     require('apps/'.$pageAjax.'.php');
-    // } else
+    if ( isset( $_GET['ajax'] ) )
+    {
+        require('apps/messages.php');
+    }
+    else
         require('apps/skel.php');
 
 ?>
