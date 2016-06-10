@@ -1,14 +1,18 @@
-<div class="header">
-    <nav class="navbar navbar-inverse">
-        <div class="row">                        
-            <div class="col-sm-12">
-                <ul class="nav navbar-nav">
-                    <li><a href="?page=messages">Minichat</a></li>
-                    <li><a href="index.php?page=register">Créer mon compte</a></li>
-                    <li><a href="index.php?page=logout">Déconnexion</a></li> 
-                    <li>Bonjour <?= $_SESSION['pseudo'] ?></li>                   
-                </ul>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">                        
+        <div class="navbar-header">
+            <img class="image-chat" src="public/images/chat.png" alt"chat">
+            <a class="titre navbar-brand" href="?page=messages">The minichat</a>
             </div>
+            <ul class="nav navbar-nav"></ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active">
+                    <a>Bonjour <?= $_SESSION['pseudo'] ?></a>
+                </li>
+                <li>
+                    <a href="index.php?page=logout">Déconnexion</a>
+                </li>                   
+            </ul>
         </div>
-    </nav>    
-</div>
+    </div>
+</nav>

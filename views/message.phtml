@@ -1,7 +1,19 @@
-<div class="message" data-id="156">
-    <span class="dateblock">
-        <span class="date"><?= htmlentities( $message->getDate() ) ?></span>
-    </span>
-    <span class="authorblock"><?= htmlentities( $message->getAuthor()->getPseudo() ) ?></span>
-    <span class="contentblock"><?= htmlentities( $message->getContent() ) ?></span>
+<div class="panel panel-default">
+  	<div class="panel-body">
+		<div class="message col-md-12" data-id="156">
+
+			<div class="col-md-8">
+			    <span class="contentblock"><?= htmlentities( $message->getContent() ) ?></span>
+			</div>
+
+		    <div class="col-md-2">
+			    <span class="date"><?= htmlentities( $message->getDate() ) ?></span>
+			</div>
+
+			<div class="col-md-2">
+			    <span class="authorblock"><?= htmlentities( $message->getAuthor()->getPseudo() ) ?></span>
+			</div>
+
+		</div>
+	</div>
 </div>
