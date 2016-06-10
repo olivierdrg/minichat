@@ -20,7 +20,7 @@
     define( 'STAR', '' ); // fontawesome fa-star 
     
 
-    $page = 'categories';
+    $page = 'home';
     $error = '';
 
     $access = array(
