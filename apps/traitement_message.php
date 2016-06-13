@@ -3,9 +3,13 @@ if ( isset( $_POST['action'] ) ) {
     
     if ($_POST['action'] == 'ajout') {
 
-        $manager = new MessageManager( $link );// $link => $this->link
+        $message_manager = new MessageManager( $link );
+        $author_manager = new AuthorManager( $link );
         try {
-            $message = $manager->create( $_POST );
+            $message = $message_manager->create( $_POST );
+            $author = $author_manager->findById( $_SESSION['id'] );
+
+            //$author_manager->updatePresence( $author );
 
             header('Location: index.php?page=chat');
             exit;

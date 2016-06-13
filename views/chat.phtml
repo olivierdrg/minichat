@@ -1,25 +1,28 @@
-    <div class="row">
-        <div class="col-sm-10 js_height overflow js_msglist">
-            <?php 
-                require("apps/messages.php"); 
-            ?>                     
-        </div > 
-        <div class="col-sm-2 js_height overflow js_userlist">
-            <?php 
-                require("apps/users.php");
-            ?>                     
-        </div >   
-    </div>
-    <div class="row spacing">
-        <form method="POST" class="js_input">
-            <div class="col-sm-10 nopad">
-                <div class="form-group">
-                    <label class="sr-only" for="exampleInputMessage">Message</label>
-                    <input type="text" name="content" autofocus autocomplete="off" class="form-control intchat" id="exampleInputMessage" placeholder="Message" value="">
+<div class="col-md-12">
+    <div class="col-md-10 js_height overflow js_msglist">
+        <?php 
+            require("apps/messages.php"); 
+        ?>                     
+    </div > 
+    <div class="col-md-2 js_height overflow js_userlist">
+        <?php 
+            require("apps/users.php");
+        ?>
+    </div >
+</div>
+
+<div class="form-recherche col-md-10">
+    <form method="POST" class="js_input">
+        <div class="form-group col-md-12 col-sm-12 col-xs-12 text-center">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <label class="sr-only" for="exampleInputMessage">Postez votre message ici...</label>
+                    <input type="text" name="content" autofocus autocomplete="off" class="form-control intchat" id="exampleInputMessage" placeholder="Postez votre message..." value="">
                 </div>
-            </div>
-            <div class="col-sm-2">
-                <button type="submit" name="action" value="ajout" class="btn btn-default subtchat">Envoyer</button>
-            </div>
-        </form>
-    </div>  
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 text-center">
+                    <button class="bouton button btn btn-success" value="ajout" name="action" type="submit">Envoyer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>    

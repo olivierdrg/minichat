@@ -20,6 +20,16 @@ class AuthorManager {
         return $list;
     }
 
+    public function findAllPresence() {
+        $date = date('Y-m-d h:i:s', mktime( date('h'), date('i') - 1, date('s'), date('m'), date('d'), date('Y') ) );
+        $list = [];
+        $request = "SELECT * FROM author WHERE date > " . $date;
+        $res = mysqli_query( $this->link, $request );
+        while ($author = mysqli_fetch_object( $res, "Author" , [$this->link]) )
+            $list[] = $author;
+        return $list;
+    }
+
     public function findById( $id ) {
         $id = intval( $id );
         $request = "SELECT * FROM author WHERE id = " . $id;
@@ -107,7 +117,7 @@ class AuthorManager {
         $res = mysqli_query( $this->link, $request ); 
          
         $ligne = mysqli_fetch_assoc( $res );
-        var_dump( $ligne );
+
         if ( password_verify( $password, $ligne['password']) ) {
             $_SESSION['id'] = $ligne['id'];
             $_SESSION['login'] = $ligne['login'];
@@ -115,6 +125,20 @@ class AuthorManager {
         }
     }
 
+    public function updatePresence( Author $author ) { // type-hinting
+        $id = $author->getId();
+
+        if ( $id ) {
+
+            $request = "UPDATE author SET  date=CURRENT_TIMESTAMP WHERE id=" . $id;
+
+            $res = mysqli_query( $this->link, $request );
+            if ( $res )
+                return $this->findById( $id );
+            else
+                throw new Exception ("Internal server error");
+        }
+    }
 
 }
 ?>
