@@ -9,7 +9,7 @@ if ( isset( $_POST['action'] ) ) {
             $message = $message_manager->create( $_POST );
             $author = $author_manager->findById( $_SESSION['id'] );
 
-            //$author_manager->updatePresence( $author );
+            $author_manager->updatePresence( $author );
 
             header('Location: index.php?page=chat');
             exit;

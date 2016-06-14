@@ -9,8 +9,6 @@ class AuthorManager {
         $this->link = $link;
     }
 
-
-
     public function findAll() {
         $list = [];
         $request = "SELECT * FROM author";
@@ -20,15 +18,7 @@ class AuthorManager {
         return $list;
     }
 
-    public function findAllPresence() {
-        $date = date('Y-m-d h:i:s', mktime( date('h'), date('i') - 1, date('s'), date('m'), date('d'), date('Y') ) );
-        $list = [];
-        $request = "SELECT * FROM author WHERE date > " . $date;
-        $res = mysqli_query( $this->link, $request );
-        while ($author = mysqli_fetch_object( $res, "Author" , [$this->link]) )
-            $list[] = $author;
-        return $list;
-    }
+
 
     public function findById( $id ) {
         $id = intval( $id );
@@ -129,7 +119,6 @@ class AuthorManager {
         $id = $author->getId();
 
         if ( $id ) {
-
             $request = "UPDATE author SET  date=CURRENT_TIMESTAMP WHERE id=" . $id;
 
             $res = mysqli_query( $this->link, $request );
@@ -140,5 +129,18 @@ class AuthorManager {
         }
     }
 
+    public function findAllPresence() {
+        $now =  mktime( date('H'), date('i'), date('s'), date('m'), date('d'), date('Y') );
+        $before = $now - 60 * 10; // Utilisateur connecter depuis 10 minutes
+        $date = date('Y-m-d h:i:s', $before );
+        $list = [];
+        $request = "SELECT * FROM author WHERE date > '" . $date . "'";
+        //var_dump( $request );
+        $res = mysqli_query( $this->link, $request );
+        while ($author = mysqli_fetch_object( $res, "Author" , [$this->link]) )
+            $list[] = $author;
+        return $list;
+        //var_dump( $list );
+    }
 }
 ?>
